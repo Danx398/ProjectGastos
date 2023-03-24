@@ -30,8 +30,8 @@
                             <td>${{$item->cantidad}}</td>
                             <td>{{$item->descripcion}}</td>
                             <td>{{$item->created_at}}</td>
-                            <td></td>
-                            <td></td>
+                            <td><a class="btn btn-outline-warning" href="{{ route('edit',$item->id) }}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td><a href="" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -39,12 +39,5 @@
             </div>
         </div>
     </div>
-   
-    <script type="text/javascript">
-        /* $(function () {
-          var table = $('#tableRegistros').DataTable();
-        }); */
-        let table = $('#tableRegistros').Datatable();
-      </script>
     
 @endsection

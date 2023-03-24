@@ -53,7 +53,11 @@ class AltasBajas extends Controller
         $registro->categoria = $request->categoria;
         $registro->cantidad = $request->cantidad;
         $registro->descripcion = $descripcion;
-        $registro->save();
+        if($registro->save()){
+            Alert::success('Registro agregado con exito', ':D');
+        }else{
+            Alert::error('Registro no agregado con exito', ':C');
+        }
         return redirect('/registro');
     }
 
@@ -76,7 +80,9 @@ class AltasBajas extends Controller
      */
     public function edit($id)
     {
-        //
+        $titulo='Actualizar Registro';
+        $items = Registro::find($id);
+        return view ('editar',compact('titulo','items'));
     }
 
     /**
@@ -88,7 +94,16 @@ class AltasBajas extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $descripcion = $request->filled('descripcion') ? $request->input('descripcion') : 'Sin descripcion';
+        $registro = Registro::find($id);
+        $registro->cantidad = $request->cantidad;
+        $registro->descripcion = $descripcion;
+        if($registro->save()){
+            Alert::success('Registro actualizado con exito', ':D');
+        }else{
+            Alert::error('Registro no actualizado con exito', ':C');
+        }
+        return redirect('/registro');
     }
 
     /**

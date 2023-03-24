@@ -1,0 +1,3 @@
+$(()=>{
+    $('#tableRegistros').DataTable();
+});
