@@ -10,3 +10,5 @@ Route::get('/crear',[AltasBajas::class,'create']);
 Route::post('/store',[AltasBajas::class,'store']);
 Route::get('/edit/{id}',[AltasBajas::class,'edit'])->name('edit');
 Route::put('/update/{id}',[AltasBajas::class,'update'])->name('update');
+Route::get('/show/{id}',[AltasBajas::class,'show'])->name('show');
+Route::delete('/destroy/{id}',[AltasBajas::class,'destroy'])->name('destroy');

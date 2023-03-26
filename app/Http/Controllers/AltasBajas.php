@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Registro;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -36,7 +37,8 @@ class AltasBajas extends Controller
     public function create()
     {
         $titulo = 'Crear nuevo registro';
-        return view('crear', compact('titulo'));
+        $items = Categoria::all();
+        return view('crear', compact('titulo','items'));
     }
 
     /**
@@ -69,7 +71,9 @@ class AltasBajas extends Controller
      */
     public function show($id)
     {
-        //
+        $titulo = 'Eliminar Registro';
+        $items = Registro::find($id);
+        return view("show",compact('titulo','items'));
     }
 
     /**
@@ -82,7 +86,8 @@ class AltasBajas extends Controller
     {
         $titulo='Actualizar Registro';
         $items = Registro::find($id);
-        return view ('editar',compact('titulo','items'));
+        $categoria = Categoria::all();
+        return view ('editar',compact('titulo','items','categoria'));
     }
 
     /**
@@ -114,6 +119,11 @@ class AltasBajas extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Registro::find($id);
+        $item->delete() ? Alert::success('Eliminado con exito', ':D'):Alert::error('Registro no actualizado con exito', ':C');
+        
+
+        return redirect('/registro');
+
     }
 }

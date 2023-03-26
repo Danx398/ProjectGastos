@@ -17,6 +17,12 @@
                         <option value="Gasto">Gasto</option>
                     </select>
                     <select class="form-select mb-3" aria-label="Default select example" name="categoria" required="">
+                        <option value="" selected>Seleccione una Categoria</option>
+                        @foreach ($items as $item)
+                        <option value="{{$item->tipo_categoria}}">{{$item->tipo_categoria}}</option>
+                        @endforeach
+                    </select>
+                   {{--  <select class="form-select mb-3" aria-label="Default select example" name="categoria" required="">
                         <option selected value="">Categoria</option>
                         <option value="Soporte Tecnico">Soporte Técnico</option>
                         <option value="desarrollo de Aplicaciones">Desarrollo de aplicaciones</option>
@@ -33,7 +39,7 @@
                         <option value="Bebidas Alcoholicas">Bebidas alcoholicas</option>
                         <option value="Electrodomesticos">Electrodomesticos</option>
                         <option value="Papeleria">Papeleria</option>
-                    </select>
+                    </select> --}}
                     <div class="form-floating mb-3">
                         <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com"
                             name="cantidad" required="">
