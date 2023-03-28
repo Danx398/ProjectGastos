@@ -19,8 +19,9 @@ class AltasBajas extends Controller
         $titulo = 'Inicio';
         $pagos = Registro::where('tipo','Pago')->sum('cantidad');
         $gastos = Registro::where('tipo','Gasto')->sum('cantidad');
+        $total = Registro::sum('cantidad');
         // $sum = Model::where('status', 'paid')->sum('sum_field');
-        return view('index', compact('titulo','pagos','gastos'));
+        return view('index', compact('titulo','pagos','gastos','total'));
     }
     public function index()
     {
