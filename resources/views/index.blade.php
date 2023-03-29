@@ -16,7 +16,7 @@
                         <h5 class="card-subtitle mb-2 text-center">Total de gastos <span
                                 class="px-2 text-white text-center bg-danger">${{ $gastos }}</span></h5>
                         <h5 class="card-subtitle mb-2 text-center">Total: <span
-                                class="px-2 text-white text-center bg-info">${{ $total }}</span></h5>
+                                class="px-2 text-white text-center bg-info">${{ $pagos - $gastos }}</span></h5>
 
                     </div>
                 </div>

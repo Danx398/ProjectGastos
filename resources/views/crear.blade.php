@@ -22,24 +22,6 @@
                         <option value="{{$item->tipo_categoria}}">{{$item->tipo_categoria}}</option>
                         @endforeach
                     </select>
-                   {{--  <select class="form-select mb-3" aria-label="Default select example" name="categoria" required="">
-                        <option selected value="">Categoria</option>
-                        <option value="Soporte Tecnico">Soporte Técnico</option>
-                        <option value="desarrollo de Aplicaciones">Desarrollo de aplicaciones</option>
-                        <option value="Cine">Cine</option>
-                        <option value="Netflix">Netflix</option>
-                        <option value="Spotify">Spotify</option>
-                        <option value="Servicios Medicos">Servicios Medicos</option>
-                        <option value="Servicios Domesticos">Servicios Domesticos</option>
-                        <option value="Transporte">Transporte</option>
-                        <option value="Vestimenta">Vestimenta</option>
-                        <option value="Calzado">Calzado</option>
-                        <option value="Desarrollo Web">Desarrollo de paginas web</option>
-                        <option value="Comida">Comida</option>
-                        <option value="Bebidas Alcoholicas">Bebidas alcoholicas</option>
-                        <option value="Electrodomesticos">Electrodomesticos</option>
-                        <option value="Papeleria">Papeleria</option>
-                    </select> --}}
                     <div class="form-floating mb-3">
                         <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com"
                             name="cantidad" required="">
