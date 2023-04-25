@@ -11,7 +11,6 @@
 </head>
 <body>
     @include('sweetalert::alert')
-    @include('../shared/nav')
     @yield('contenido')
     <script src="{{mix('js/app.js')}}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>

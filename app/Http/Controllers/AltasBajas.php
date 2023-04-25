@@ -9,17 +9,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class AltasBajas extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware(['auth'])->only(['inicio','index']);
+    }
     public function inicio()
     {
         $titulo = 'Inicio';
         $pagos = Registro::where('tipo','Pago')->sum('cantidad');
         $gastos = Registro::where('tipo','Gasto')->sum('cantidad');
-        // $total = Registro::sum('cantidad');
+        $total = Registro::sum('cantidad');
         // $sum = Model::where('status', 'paid')->sum('sum_field');
         return view('index', compact('titulo','pagos','gastos','total'));
     }

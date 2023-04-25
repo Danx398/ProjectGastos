@@ -1,5 +1,6 @@
 @extends('./layouts/main')
 @section('contenido')
+@include('../shared/nav')
     <div class="container">
         <div class="row">
             <div class="col-12">

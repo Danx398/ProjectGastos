@@ -1,10 +1,16 @@
 <?php
 
 use App\Http\Controllers\AltasBajas;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+/* LOGIN */
+Route::get('/',[AuthController::class,'index'])->name('login');
+Route::get('/nuevoUsuario', [AuthController::class, 'crearUsuario']);
+Route::post('/logear', [AuthController::class, 'logear'])->name('logear');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
-Route::get('/',[AltasBajas::class,'inicio']);
+/* Proyecto Gastos */
+Route::get('/inicio',[AltasBajas::class,'inicio'])->name('inicio');
 Route::get('/registro',[AltasBajas::class,'index']);
 Route::get('/crear',[AltasBajas::class,'create']);
 Route::post('/store',[AltasBajas::class,'store']);
