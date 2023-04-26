@@ -17,8 +17,11 @@
                     </div>
 
                     <div class="row justify-content-center">
-                        <div class="col-12 mt-4">
+                        <div class="col-6 mt-4">
                             <button class="btn btn-outline-dark container-fluid">Ingresar</button>
+                        </div>
+                        <div class="col-6 mt-4">
+                            <a class="btn btn-outline-dark container-fluid" href="/registroUser">Registrar</a>
                         </div>
                     </div>
                 </form>

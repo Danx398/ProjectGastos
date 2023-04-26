@@ -37,12 +37,20 @@ class AuthController extends Controller
         Session::flush();
         return redirect()->route('login');
     }
-    public function crearUsuario()
+    public function mostrarRegistro(){
+        $titulo = 'Registrar Nuevo usuario';
+        return view ('registroLogin',compact('titulo'));
+    }
+    public function crearUsuario(Request $request)
     {
         $item = new User();
-        $item->name = 'Dan';
-        $item->password = Hash::make('12345');
-        $item->save();
-        return $item;
+        $item->name = $request->name;
+        $item->password = Hash::make($request->password);
+        if($item->save()){
+            Alert::success('Usuario registrado con Exito', ':D');
+        }else{
+            Alert::error('Datos Erroneos, no registrado', ':C');
+        }
+        return redirect()->route('login');
     }
 }

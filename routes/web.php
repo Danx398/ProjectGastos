@@ -5,9 +5,11 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 /* LOGIN */
 Route::get('/',[AuthController::class,'index'])->name('login');
-Route::get('/nuevoUsuario', [AuthController::class, 'crearUsuario']);
+// Route::get('/nuevoUsuario', [AuthController::class, 'crearUsuario']);
 Route::post('/logear', [AuthController::class, 'logear'])->name('logear');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/registrar',[AuthController::class,'crearUsuario']);
+Route::get('/registroUser',[AuthController::class,'mostrarRegistro']);
 
 /* Proyecto Gastos */
 Route::get('/inicio',[AltasBajas::class,'inicio'])->name('inicio');
